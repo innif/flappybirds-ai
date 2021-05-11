@@ -7,7 +7,6 @@ import math
 def sigmoid(x):
     return 1 / (1 + math.exp(-x))
 
-
 class NeuralNetworkLayer:
     def __init__(self, input_dim, output_dim, weights=None, next_layer=None):
         self.input_dim = input_dim

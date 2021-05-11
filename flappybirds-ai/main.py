@@ -30,7 +30,7 @@ def run():
         my_game.start()
 
         # Spiel simulieren, bis beste Hälfte ermittelt wurde
-        while (my_game.birds_alive > sample_size / 2 - 1):
+        while my_game.birds_alive > sample_size / 2 - 1:
             my_game.update()
             my_game.render(slow_mode)
             if slow_mode:
@@ -43,11 +43,11 @@ def run():
         my_game.update()
 
         # Vögel nach scores sortieren
-        birds = my_game.birdlist
+        birds = my_game.bird_list
         birds.sort(reverse=True, key=lambda b: b.score)
 
         # Besten Vogel ausgeben
-        print("Iteration: {}, Score: {}".format(iteration, birds[0].score))
+        print("\nIteration: {}, Score: {}".format(iteration, birds[0].score))
         birds[0].print()
 
         # Models aus der besten Hälfte der Vögel extrahieren
